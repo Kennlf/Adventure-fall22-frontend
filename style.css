@@ -1,0 +1,50 @@
+.element-wrap{
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.sit-left{
+    width: auto; 
+    height: auto;
+    text-align: center;
+    justify-content:center;
+}
+
+.sit-right{
+    width: auto; 
+    height: auto;
+    float: right;
+    justify-content: center;
+}
+
+.sit-center{
+    width: auto;
+    height: auto;
+    margin: auto;
+    justify-content: space-around;
+    display: flex;
+}
+
+.banner-container{ 
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    display:flow-root;
+}
+
+.banner-image{
+    width: 105%; 
+    opacity: 80%;
+}
+
+.logo-image{
+    position: absolute;
+    top: 0; 
+}
+
+.filler-image{
+    height: 350px;
+    width: 350px;
+}
+
