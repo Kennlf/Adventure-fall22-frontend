@@ -1,6 +1,6 @@
 .element-wrap{
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     display: flex;
 }
 
@@ -8,23 +8,16 @@
     width: auto; 
     height: auto;
     text-align: center;
-    justify-content:center;
 }
 
 .sit-right{
     width: auto; 
     height: auto;
     float: right;
-    justify-content: center;
+    justify-content: space-evenly;
+    display: contents;
 }
 
-.sit-center{
-    width: auto;
-    height: auto;
-    margin: auto;
-    justify-content: space-around;
-    display: flex;
-}
 
 .banner-container{ 
     position: relative;
