@@ -27,13 +27,14 @@
 }
 
 .banner-image{
-    width: 105%; 
+    width: 100%; 
     opacity: 80%;
 }
 
 .logo-image{
     position: absolute;
     top: 0; 
+    left: 0;
 }
 
 .filler-image{
