@@ -102,13 +102,13 @@ input[type=text]{
     padding: 20px;
   }
   
-  .col-25 {
+  .col-label {
     float: left;
     width: 25%;
     margin-top: 6px;
   }
   
-  .col-75 {
+  .col-input {
     float: left;
     width: 75%;
     margin-top: 6px;
