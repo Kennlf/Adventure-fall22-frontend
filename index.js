@@ -21,11 +21,10 @@ window.addEventListener("load", async () => {
   const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
   const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
   const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
-  const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
-/*  
   const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
   const templateMatch = await loadHtml("./pages/show-match/match.html") */
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
+  const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
 
   adjustForMissingHash()
 
@@ -97,7 +96,7 @@ window.addEventListener("load", async () => {
       },
       "/sumoWrestling": () => {
         renderTemplate(templateSumo, "content")
-      },
+      }, */
       "/find-reservation": (match) => {
         renderTemplate(templateFindReservation, "content")
         initFindReservation(match)
