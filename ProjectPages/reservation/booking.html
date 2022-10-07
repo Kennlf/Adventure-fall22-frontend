@@ -1,11 +1,134 @@
 <div class = "template">
-  <div class="center-position">
-      <h3>Book Reservation</h3>
-  </div>
-  <div class="center-position">
-      <a href="privateReservation.html">
-          <button id="private-booking-btn" class="reservation-button">Private Booking</button>
-      </a>
-      <button id="company-booking-btn" class="reservation-button">Company Booking</button>
-  </div>
+    <div class="center-position">
+        <h3>Book Reservation</h3>
+    </div>
+        <div id="btns" class="center-position">
+            <button id="menu-btn-priv-res" class="reservation-button">Private Booking</button>
+            <button id="menu-btn-company-booking-btn" class="reservation-button">Company Booking</button>
+        </div>
+    <div id="div-start" style="display:block">
+        <h2>start display</h2>
+    </div>
+    <div id="div-priv-res" style="display:none">
+        <h2 class="center-position">Private booking</h2>
+        <div class="container">
+            <form action="/action_page.php">
+            <div class="row">
+            <div class="col-label">
+                <label for="fname">Full Name</label>
+            </div>
+            <div class="col-input">
+                <input type="text" id="fname" name="fullname" placeholder="Full name">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-label">
+                <label for="email">E-mail</label>
+            </div>
+            <div class="col-input">
+                <input type="text" id="email" name="email" placeholder="E-mail">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-label">
+                <label for="phone">Phone number</label>
+                </div>
+                <div class="col-input">
+                <input type="text" id="phone" name="phone" placeholder="Phone number">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-label">
+                <label for="age">Age</label>
+            </div>
+            <div class="col-input">
+                <input type="number" min="1" max="100" value="1">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-label">
+                <label for="participants">Number of participants</label>
+                </div>
+                <div class="col-input">
+                <input type="number" id="participants" name="participants" placeholder="How many participants">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-label">
+                <label for="date">Date</label>
+            </div>
+            <div class="col-input">
+                <input type="date" id="date" name="event-date"
+                min="2022-01-01" max="2025-12-31">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-label">
+                <label for="time">Start time</label>
+            </div>
+            <div class="col-input">
+                <input type="time" id="timeStart" name="timeStart"
+                min="09:00" max="18:00" required>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-label">
+                <label for="time">The End Times</label>
+            </div>
+            <div class="col-input">
+                <input type="time" id="timeEnd" name="timeEnd"
+                min="09:00" max="18:00" required>
+            </div>
+            </div>
+            <br>
+            <div class="row">
+            <input id="btn-submit-res" type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
+
+<script>
+    let lastVisibleContent = document.getElementById("div-start");
+    document.getElementById("btns").onclick = handleButtonClick
+
+    function handleButtonClick(evt) {
+      const target = evt.target
+      const isMenuBtn = target.tagName === "BUTTON" && target.id.startsWith("menu-btn-")
+      if (!isMenuBtn) {
+        return
+      }
+      lastVisibleContent.style.display = "none"
+      const idForNewVisibleContent = target.id.replace("menu-btn", "div")
+      lastVisibleContent = document.getElementById(idForNewVisibleContent);
+      lastVisibleContent.style.display = "block"
+
+      switch (target.id) {
+        case "menu-btn-start": break //No JavaScript for this view
+        case "menu-btn-priv-res": addPrivateRes(); break
+        case "menu-btn-company-booking-btn": findOne(); break
+      }  
+    }
+
+    function addPrivateRes() {
+      document.getElementById("btn-submit-res").onclick = makeNewRes
+      function makeNewRes() {   
+        const newRes = {}
+        newRes.fname = document.getElementById("fname").value
+        newRes.email = document.getElementById("email").value
+        //Now newCar contains all required fields (MUST match the DTO on the backend) and their values
+
+        //Build the options object requred for a POST
+        const options = {}
+        options.method = "POST"
+        options.headers = { "Content-type": "application/json" }
+        options.body = JSON.stringify(newRes)
+
+        fetch(URL, options)
+          .then(r => r.json())
+          .then(addedRes => document.getElementById("returned-new-car").innerText = JSON.stringify(addedRes, null, 2)
+          )
+        }
+    }
+</script>

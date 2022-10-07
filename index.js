@@ -20,6 +20,7 @@ window.addEventListener("load", async () => {
   const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
   const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
   const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
+  const templateprivateReservation = await loadHtml("./projectPages/reservation/privateReservation.html")
 /*   const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
   const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
   const templateMatch = await loadHtml("./pages/show-match/match.html") */
@@ -55,6 +56,9 @@ window.addEventListener("load", async () => {
       },
       "/booking": () => {
         renderTemplate(templateBooking, "content")
+      },
+      "/reservationPriv": () => {
+        renderTemplate(templateprivateReservation, "content")
       },
       "/paintBall": () => {
         renderTemplate(templatePaintBall, "content")
