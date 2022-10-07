@@ -6,9 +6,9 @@ import {
 } from "./utils.js"
 
 /* import { initNavigate } from "./pages/navigate/navigate.js"
-import { showMatchObject } from "./pages/show-match/match.js"
-import { initFindUser } from "./pages/findUser/findUser.js" */
+import { showMatchObject } from "./pages/show-match/match.js" */
 import { initReservations } from "./projectPages/reservation/reservationData.js"
+import { initFindReservation } from "./ProjectPages/reservation/findReservation.js"
 
 window.addEventListener("load", async () => {
 
@@ -20,8 +20,9 @@ window.addEventListener("load", async () => {
  /*  const templatePaintBall = await loadHtml("./projectPages/activities/paintBall.html")
   const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
   const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
-  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html") */
-/*   const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
+  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
+  const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
+/*  
   const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
   const templateMatch = await loadHtml("./pages/show-match/match.html") */
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
@@ -97,7 +98,11 @@ window.addEventListener("load", async () => {
       "/sumoWrestling": () => {
         renderTemplate(templateSumo, "content")
       },
-    */
+      "/find-reservation": (match) => {
+        renderTemplate(templateFindReservation, "content")
+        initFindReservation(match)
+      },
+   
     })
     .notFound(() => {
       renderTemplate(templateNotFound, "content")
