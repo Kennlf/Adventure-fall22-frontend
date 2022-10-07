@@ -16,10 +16,11 @@ window.addEventListener("load", async () => {
   const templateAbout = await loadHtml("./projectPages/about/about.html")
   const templateReservation = await loadHtml("./projectPages/reservation/reservationData.html")
   const templateBooking = await loadHtml("./projectPages/reservation/booking.html")
-  const templatePaintBall = await loadHtml("./projectPages/activities/paintBall.html")
+  const templateActivities = await loadHtml("./projectPages/activities/activityOverview.html")
+ /*  const templatePaintBall = await loadHtml("./projectPages/activities/paintBall.html")
   const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
   const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
-  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
+  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html") */
 /*   const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
   const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
   const templateMatch = await loadHtml("./pages/show-match/match.html") */
@@ -41,10 +42,35 @@ window.addEventListener("load", async () => {
     .on({
       //For very simple "templates", you can just insert your HTML directly like below
       "/": () => document.getElementById("content").innerHTML =
-        `<h2>Home</h2>
-      <p style='margin-top:2em'>
-      This is the content of the Home Route
-      </p>
+        `<div class="banner-container">
+        <img class="banner-image" src="images/gocart-billede.jpeg"> 
+        <img class="logo-image" src="images/Adv-all.png">
+      </div>
+    
+      <br>
+      <br>
+    
+    
+      <div class="element-wrap">
+      <div class="sit-left">
+        <h2>Åbningstider</h2>
+        <h5>Mandag: Lukket</h5>
+        <h5>Tirsdag: 10-21</h5>
+        <h5>Onsdag: 10-21</h5>
+        <h5>Torsdag: 10-22</h5>
+        <h5>Fredag: 10-22</h5>
+        <h5>Lørdag: 11-23</h5>
+        <h5>Søndag: Lukket</h5>
+      </div>
+      <div class="sit-right">
+        <img class="filler-image" src="images/minigolf.jpeg">
+        <img class="filler-image" src="images/paintball2.jpeg">
+        <img class="filler-image" src="images/sumo-wrestling.jpeg">
+      </div>
+      </div>
+    
+      <br>
+      <br>
      `,
 
       "/about": () => renderTemplate(templateAbout, "content"),
@@ -56,7 +82,10 @@ window.addEventListener("load", async () => {
       "/booking": () => {
         renderTemplate(templateBooking, "content")
       },
-      "/paintBall": () => {
+      "/activities": () => {
+        renderTemplate(templateActivities, "content")
+      },
+      /* "/paintBall": () => {
         renderTemplate(templatePaintBall, "content")
       },
       "/miniGolf": () => {
@@ -68,7 +97,7 @@ window.addEventListener("load", async () => {
       "/sumoWrestling": () => {
         renderTemplate(templateSumo, "content")
       },
-   
+    */
     })
     .notFound(() => {
       renderTemplate(templateNotFound, "content")
