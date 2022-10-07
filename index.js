@@ -6,18 +6,23 @@ import {
 } from "./utils.js"
 
 /* import { initNavigate } from "./pages/navigate/navigate.js"
-import { showMatchObject } from "./pages/show-match/match.js" */
-/* import { initUsers } from "./pages/users/users.js"
+import { showMatchObject } from "./pages/show-match/match.js"
 import { initFindUser } from "./pages/findUser/findUser.js" */
+import { initReservations } from "./projectPages/reservation/reservationData.js"
 
 window.addEventListener("load", async () => {
 
-  const templateAbout = await loadHtml("./about.html")
-  const templateReservation = await loadHtml("./reservation/reservation.html")
-  const templateGoCarting = await loadHtml("./activities/goCarting.html")
-  const templateMiniGolf = await loadHtml("./activities/miniGolf.html")
-  const templatePaintBall = await loadHtml("./activities/paintBall.html")
-  const templateSumoWrestling = await loadHtml("./activities/sumoWrestling.html")
+  //const templatehome = await loadHtml("./home.html")
+  const templateAbout = await loadHtml("./projectPages/about/about.html")
+  const templateReservation = await loadHtml("./projectPages/reservation/reservationData.html")
+  const templateBooking = await loadHtml("./projectPages/reservation/booking.html")
+  const templatePaintBall = await loadHtml("./projectPages/activities/paintBall.html")
+  const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
+  const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
+  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
+/*   const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
+  const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
+  const templateMatch = await loadHtml("./pages/show-match/match.html") */
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
 
   adjustForMissingHash()
@@ -41,26 +46,29 @@ window.addEventListener("load", async () => {
       This is the content of the Home Route
       </p>
      `,
+
       "/about": () => renderTemplate(templateAbout, "content"),
 
-      "/reservation": () => {
+      "/reservations": () => {
         renderTemplate(templateReservation, "content")
-        //initUsers()
+        initReservations()
+      },
+      "/booking": () => {
+        renderTemplate(templateBooking, "content")
+      },
+      "/paintBall": () => {
+        renderTemplate(templatePaintBall, "content")
+      },
+      "/miniGolf": () => {
+        renderTemplate(templateMiniGolf, "content")
       },
       "/goCarting": () => {
         renderTemplate(templateGoCarting, "content")
-        //initFindUser(match)
       },
-
-      "/miniGolf": () => {
-        renderTemplate(templateMiniGolf, "content")
-        //initNavigate()
-      },
-
       "/sumoWrestling": () => {
-        renderTemplate(templateSumoWrestling, "content")
-        //showMatchObject(match)
-      }
+        renderTemplate(templateSumo, "content")
+      },
+   
     })
     .notFound(() => {
       renderTemplate(templateNotFound, "content")
