@@ -12,7 +12,7 @@ import { initFindReservation } from "./ProjectPages/reservation/findReservation.
 
 window.addEventListener("load", async () => {
 
-  //const templatehome = await loadHtml("./home.html")
+  const templatehome = await loadHtml("./projectPages/home.html")
   const templateAbout = await loadHtml("./projectPages/about/about.html")
   const templateReservation = await loadHtml("./projectPages/reservation/reservationData.html")
   const templateBooking = await loadHtml("./projectPages/reservation/booking.html")
@@ -41,37 +41,7 @@ window.addEventListener("load", async () => {
     })
     .on({
       //For very simple "templates", you can just insert your HTML directly like below
-      "/": () => document.getElementById("content").innerHTML =
-        `<div class="banner-container">
-        <img class="banner-image" src="images/gocart-billede.jpeg"> 
-        <img class="logo-image" src="images/Adv-all.png">
-      </div>
-    
-      <br>
-      <br>
-    
-    
-      <div class="element-wrap">
-      <div class="sit-left">
-        <h2>Åbningstider</h2>
-        <h5>Mandag: Lukket</h5>
-        <h5>Tirsdag: 10-21</h5>
-        <h5>Onsdag: 10-21</h5>
-        <h5>Torsdag: 10-22</h5>
-        <h5>Fredag: 10-22</h5>
-        <h5>Lørdag: 11-23</h5>
-        <h5>Søndag: Lukket</h5>
-      </div>
-      <div class="sit-right">
-        <img class="filler-image" src="images/minigolf.jpeg">
-        <img class="filler-image" src="images/paintball2.jpeg">
-        <img class="filler-image" src="images/sumo-wrestling.jpeg">
-      </div>
-      </div>
-    
-      <br>
-      <br>
-     `,
+      "/": () => renderTemplate(templatehome, "content"),
 
       "/about": () => renderTemplate(templateAbout, "content"),
 
