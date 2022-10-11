@@ -6,9 +6,6 @@
         <button id="btn-priv-res" class="reservation-button">Private Booking</button>
         <button id="btn-corp-res" class="reservation-button">Company Booking</button>
     </div>
-    <div id="div-start" style="display:block">
-        <h2>start display</h2>
-    </div>
     <div id="div-priv-res" style="display:none">
         <h2 class="center-position">Private booking</h2>
         <div class="container">
@@ -66,15 +63,14 @@
                         <label for="time">Start time</label>
                     </div>
                     <div class="col-input">
-                        <input type="time" id="timeStart" name="timeStart" min="09:00" max="18:00" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-label">
-                        <label for="fname">Full Name</label>
-                    </div>
-                    <div class="col-input">
-                        <input type="text" id="fname" name="fullname" placeholder="Full name">
+                        <select type="select" id="timeStart" name="timeStart">
+                            <option value="10:00">10:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="22:00">22:00</option>
                     </div>
                 </div>
                 <br>
