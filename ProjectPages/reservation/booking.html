@@ -1,4 +1,5 @@
 <div class="template">
+    <br>
     <div class="center-position">
         <h3>Book Reservation</h3>
     </div>
@@ -48,6 +49,13 @@
                     </div>
                     <div class="col-input">
                         <input type="number" id="participants" name="participants" placeholder="Skriv antal her...">
+                        <p id="info" style="display: none; color: red;">
+                            Visse aktiviteter har en Aldersgrænse, 
+                            så du skal være sikker på at alle i deltagere lever op til vores alderskrav.
+                            Deltagere der ikke lever op til kravene, vil blive afvist.
+                            <br>
+                            <B>Læs mere under <u>info</u>.</B>
+                        </p>
                     </div>
                 </div>
                 <div class="row">
@@ -75,7 +83,7 @@
                 </div> -->
                 <br>
                 <div class="row">
-                    <input id="btn-submit-res" type="submit" value="Submit">
+                    <input id="btn-submit-res" type="submit" value="Submit" required>
                 </div>
             </form>
         </div>
@@ -132,7 +140,14 @@
                         <label for="participants">Antal deltagere</label>
                     </div>
                     <div class="col-input">
-                        <input type="number" id="participants" name="participants" placeholder="Skriv antal her...">
+                        <input type="number" id="participants1" name="participants" placeholder="Skriv antal her...">
+                        <p id="info1" style="display: none; color: red;">
+                            Visse aktiviteter har en Aldersgrænse, 
+                            så du skal være sikker på at alle i deltagere lever op til vores alderskrav.
+                            Deltagere der ikke lever op til kravene, vil blive afvist.
+                            <br>
+                            <B>Læs mere under <u>info</u>.</B>
+                        </p>
                     </div>
                 </div>
                 <div class="row">
