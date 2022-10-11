@@ -5,8 +5,6 @@ import {
   setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
 } from "./utils.js"
 
-/* import { initNavigate } from "./pages/navigate/navigate.js"
-import { showMatchObject } from "./pages/show-match/match.js" */
 import { initReservations } from "./projectPages/reservation/reservationData.js"
 import { initFindReservation } from "./ProjectPages/reservation/findReservation.js"
 import { initTest } from "./ProjectPages/reservation/booking.js"
@@ -18,12 +16,6 @@ window.addEventListener("load", async () => {
   const templateReservation = await loadHtml("./projectPages/reservation/reservationData.html")
   const templateBooking = await loadHtml("./projectPages/reservation/booking.html")
   const templateActivities = await loadHtml("./projectPages/activities/activityOverview.html")
- /*  const templatePaintBall = await loadHtml("./projectPages/activities/paintBall.html")
-  const templateMiniGolf = await loadHtml("./projectPages/activities/miniGolf.html")
-  const templateGoCarting = await loadHtml("./projectPages/activities/goCarting.html")
-  const templateSumo = await loadHtml("./projectPages/activities/sumoWrestling.html")
-  const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
-  const templateMatch = await loadHtml("./pages/show-match/match.html") */
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
 
@@ -41,7 +33,7 @@ window.addEventListener("load", async () => {
       }
     })
     .on({
-      //For very simple "templates", you can just insert your HTML directly like below
+  
       "/": () => renderTemplate(templatehome, "content"),
 
       "/about": () => renderTemplate(templateAbout, "content"),
@@ -57,18 +49,6 @@ window.addEventListener("load", async () => {
       "/activities": () => {
         renderTemplate(templateActivities, "content")
       },
-      /* "/paintBall": () => {
-        renderTemplate(templatePaintBall, "content")
-      },
-      "/miniGolf": () => {
-        renderTemplate(templateMiniGolf, "content")
-      },
-      "/goCarting": () => {
-        renderTemplate(templateGoCarting, "content")
-      },
-      "/sumoWrestling": () => {
-        renderTemplate(templateSumo, "content")
-      }, */
       "/find-reservation": (match) => {
         renderTemplate(templateFindReservation, "content")
         initFindReservation(match)
