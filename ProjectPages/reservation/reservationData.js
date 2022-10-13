@@ -1,6 +1,7 @@
-const URL = "http://localhost:8080/api/reservations"
+//const URL = "http://localhost:8080/api/reservations"
+import { API_URL } from "../../setting.js"
 import { sanitizeStringWithTableRows } from "../../utils.js"
-
+const URL = API_URL + "reservations"
 
 export function initReservations() {
   document.getElementById("btn-get-all").onclick = getAllReservations
