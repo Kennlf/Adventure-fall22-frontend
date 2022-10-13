@@ -32,17 +32,9 @@
                         <label for="phone">Telefon Nr.</label>
                     </div>
                     <div class="col-input">
-                        <input type="text" id="phone" name="phone" placeholder="Skriv nummer her...">
+                        <input type="number" id="phone" name="phone" placeholder="Skriv nummer her...">
                     </div>
                 </div>
-               <!--  <div class="row">
-                    <div class="col-label">
-                        <label for="age">Alder</label>
-                    </div>
-                    <div class="col-input">
-                        <input type="number" min="1" max="100" placeholder="Age">
-                    </div>
-                </div> -->
                 <div class="row">
                     <div class="col-label">
                         <label for="participants">Antal deltagere</label>
@@ -66,21 +58,19 @@
                         <input type="date" id="date" name="event-date" min="2022-01-01" max="2025-12-31">
                     </div>
                 </div>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-label">
-                        <label for="time">Start time</label>
+                        <label for="date">Aktivitet</label>
                     </div>
                     <div class="col-input">
-                        <select type="select" id="timeStart" name="timeStart">
-                            <option value="1">10:00</option>
-                            <option value="2">12:00</option>
-                            <option value="3">14:00</option>
-                            <option value="4">16:00</option>
-                            <option value="5">18:00</option>
-                            <option value="6">20:00</option>
-                            <option value="7">22:00</option>
+                        <select id="activity1">
+                            <option type="text" value="minigolf">Mini Golf</option>
+                            <option type="text" value="paintball">Paintball</option>
+                            <option type="text" value="sumo">Sumo Wrestling</option>
+                            <option type="text" value="gocart">Go Carting</option>
+                        </select>
                     </div>
-                </div> -->
+                </div>
                 <br>
                 <div class="row">
                     <input id="btn-submit-res" type="submit" value="Submit" required>
@@ -116,7 +106,7 @@
                         <label for="phone">Telefon nummer</label>
                     </div>
                     <div class="col-input">
-                        <input type="text" id="phone" name="phone" placeholder="Skriv nummer her...">
+                        <input type="number" id="phone" name="phone" placeholder="Skriv nummer her...">
                     </div>
                 </div>
                 <div class="row">
@@ -158,14 +148,19 @@
                         <input type="date" id="date" name="event-date" min="2022-01-01" max="2025-12-31">
                     </div>
                 </div>
-              <!--   <div class="row">
+                <div class="row">
                     <div class="col-label">
-                        <label for="time">Start time</label>
+                        <label for="date">Aktivitet</label>
                     </div>
                     <div class="col-input">
-                        <input type="time" id="timeStart" name="timeStart" min="09:00" max="18:00" required>
+                        <select type="text" id="activity2">
+                            <option value="minigolf">Mini Golf</option>
+                            <option value="paintball">Paintball</option>
+                            <option value="sumo">Sumo Wrestling</option>
+                            <option value="gocart">Go Carting</option>
+                        </select>
                     </div>
-                </div> -->
+                </div>
                 <br>
                 <div class="row">
                     <input id="btn-submit-res" type="submit" value="Submit">

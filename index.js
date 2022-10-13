@@ -7,7 +7,7 @@ import {
 
 import { initReservations } from "./projectPages/reservation/reservationData.js"
 import { initFindReservation } from "./ProjectPages/reservation/findReservation.js"
-import { initChooseBooking, initShowInfo} from "./ProjectPages/reservation/booking.js"
+import { initChooseBooking, initShowInfo, initMakeReservation} from "./ProjectPages/reservation/booking.js"
 
 window.addEventListener("load", async () => {
 
@@ -46,6 +46,7 @@ window.addEventListener("load", async () => {
         renderTemplate(templateBooking, "content")
         initChooseBooking()
         initShowInfo()
+        initMakeReservation()
       
       },
       "/activities": () => {
