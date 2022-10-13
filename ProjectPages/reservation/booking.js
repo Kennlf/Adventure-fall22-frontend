@@ -6,12 +6,12 @@ export function initMakeReservation(){
 
     function createNewReservation(){
     const newReservation = { }
-        newReservation.contactName = document.getElementById("fname").value
-        newReservation.email = document.getElementById("email").value
-        newReservation.phoneNumber = document.getElementById("phone").value
-        newReservation.NumberOfParticipants = document.getElementById("participants").value
+        newReservation.customer = document.getElementById("fname").value
         newReservation.date = document.getElementById("date").value
-        newReservation.activity = document.getElementById("activity1").value
+      /*   newReservation.email = document.getElementById("email").value
+        newReservation.phoneNumber = document.getElementById("phone").value */
+        newReservation.NumberOfParticipants = document.getElementById("participants").value
+        newReservation.gameName = document.getElementById("activity1").value
 
     const option = {}
         option.method = 'POST'
@@ -24,7 +24,8 @@ export function initMakeReservation(){
     }
 }
 
-export function initChooseBooking(){
+export function initChooseBooking() {
+
     document.getElementById("btn-priv-res").onclick = () => { 
         document.getElementById("div-priv-res").style.display = "block"
         document.getElementById("div-corp-res").style.display = "none"
@@ -34,7 +35,6 @@ export function initChooseBooking(){
         document.getElementById("div-priv-res").style.display = "none"
         document.getElementById("div-corp-res").style.display = "block"
     }
-
 }
 
 export function initShowInfo(){
