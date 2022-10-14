@@ -16,7 +16,7 @@ window.addEventListener("load", async () => {
   const templateReservation = await loadHtml("./ProjectPages/reservation/reservationData.html")
   const templateBooking = await loadHtml("./ProjectPages/reservation/booking.html")
   const templateActivities = await loadHtml("./ProjectPages/activities/activityOverview.html")
-  const templateNotFound = await loadHtml("./Pages/notFound/notFound.html")
+  const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
 
   adjustForMissingHash()
