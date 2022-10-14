@@ -5,18 +5,18 @@ import {
   setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
 } from "./utils.js"
 
-import { initReservations } from "./projectPages/reservation/reservationData.js"
+import { initReservations } from "./ProjectPages/reservation/reservationData.js"
 import { initFindReservation } from "./ProjectPages/reservation/findReservation.js"
 import { initChooseBooking, initShowInfo, initMakeReservation} from "./ProjectPages/reservation/booking.js"
 
 window.addEventListener("load", async () => {
 
-  const templatehome = await loadHtml("./projectPages/home.html")
-  const templateAbout = await loadHtml("./projectPages/about/about.html")
-  const templateReservation = await loadHtml("./projectPages/reservation/reservationData.html")
-  const templateBooking = await loadHtml("./projectPages/reservation/booking.html")
-  const templateActivities = await loadHtml("./projectPages/activities/activityOverview.html")
-  const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
+  const templatehome = await loadHtml("./ProjectPages/home.html")
+  const templateAbout = await loadHtml("./ProjectPages/about/about.html")
+  const templateReservation = await loadHtml("./ProjectPages/reservation/reservationData.html")
+  const templateBooking = await loadHtml("./ProjectPages/reservation/booking.html")
+  const templateActivities = await loadHtml("./ProjectPages/activities/activityOverview.html")
+  const templateNotFound = await loadHtml("./Pages/notFound/notFound.html")
   const templateFindReservation = await loadHtml("./ProjectPages/reservation/findReservation.html")
 
   adjustForMissingHash()
